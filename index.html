@@ -48,6 +48,7 @@
                 const token = res.data.token;
                 localStorage.setItem('jwt', token);
                 //getDashboard();
+                //Added pushState
                 history.pushState({id: 'login'}, "login", "login");
             }
         });
@@ -63,6 +64,7 @@
             if (res && res.data && res.data.success) {
                 document.querySelector('h1.row').innerHTML = 'Dashboard';
                 document.querySelector('main').innerHTML = res.data.myContent;
+                //Added pushState
                 history.pushState({id: 'dashboard'}, "dashboard", "dashboard");
             }
         });
@@ -88,6 +90,7 @@
             if (res && res.data && res.data.success) {
                 document.querySelector('h1.row').innerHTML = 'Settings';
                 document.querySelector('main').innerHTML = res.data.myContent;
+                //Added pushState
                 history.pushState({id: 'settings'}, "settings", "settings");
             }
         });
